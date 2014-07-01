@@ -1,0 +1,96 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+.group:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+a {
+	font-size: 1.6em;
+	font-family: verdana, sans-serif;
+	width:200px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1 {
+	display: inline-block;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+header {
+	margin-bottom:20px;
+}
+
+input {
+	width:200px;
+}
+
+.outer {
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+}
+
+.outer li {
+	float: left;
+	margin: 0 0 0 10px;
+	padding:0;
+}
+
+.inner {
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+}
+
+.inner li {
+	font-size: 1.6em;
+	float: left;
+	height:50px;
+	line-height: 39px;
+	margin:0 0 20px 0;
+	padding:5px;
+	text-align: center;
+}
+
+.inner li:first-child {
+	width:50px;
+	border-radius: 50%;
+}
+
+.inner li:last-child {
+	margin-left: -2px;
+}
+
+.inner li:only-child {
+	text-align: center;
+	width:50px;
+	border:none;
+	border-radius:100%;
+	background-color: #d3d3d3;
+}
+
+.fizz {
+	background-color: lightgreen;
+}
+
+.buzz {
+	background-color: lightblue;
+}
+
+.fizzbuzz {
+	background-color: lightpink;
+}
