@@ -6,15 +6,15 @@ $(document).ready(function(){
 
 		while ((numberToCalculate == NaN) || (numberToCalculate%1 != 0) || (numberToCalculate < 1) || (numberToCalculate > 100) || !($.isNumeric(numberToCalculate)) )
 		{
-				numberToCalculate = prompt("Please enter a number between 1 and 100 (no decimals)");
-				if(numberToCalculate == "exit")
+			numberToCalculate = prompt("Please enter a number between 1 and 100 (no decimals) \nType \"exit\" and press \"Enter\" exit the program. ");
+			if(numberToCalculate.toLowerCase() == "exit")
+			{
+				return function()
 				{
-					return function()
-					{
-						return;
-					}
-				}	
-				numberToCalculate = +numberToCalculate;
+					return;
+				}
+			}	
+			numberToCalculate = +numberToCalculate;
 		}
 		return function() 
 		{
