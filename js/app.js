@@ -1,8 +1,22 @@
 $(document).ready(function(){
-
-	var fizzBuzz = function(numberToCalculate) {
 	
-		if($.isNumeric(numberToCalculate) && numberToCalculate >= 1 && numberToCalculate <= 100)
+	//Closure function
+	function fizzBuzzConstructor(input) {
+		var numberToCalculate = input; //numberToCalculate is now a private variable
+
+		while ((numberToCalculate == NaN) || (numberToCalculate%1 != 0) || (numberToCalculate < 1) || (numberToCalculate > 100) || !($.isNumeric(numberToCalculate)) )
+		{
+				numberToCalculate = prompt("Please enter a number between 1 and 100 (no decimals)");
+				if(numberToCalculate == "exit")
+				{
+					return function()
+					{
+						return;
+					}
+				}	
+				numberToCalculate = +numberToCalculate;
+		}
+		return function() 
 		{
 			$(".outer").empty();
 
@@ -34,26 +48,12 @@ $(document).ready(function(){
 				}
 			}
 		}
-		else if (numberToCalculate == NaN)
-		{
-			alert("Please enter a number");
-		}
-		else if (numberToCalculate%1 != 0)
-		{
-			alert("Decimal numbers not allowed.")
-		}
-		else
-		{
-			alert("Please enter a number between 1 and 100.")
-		}
 	}
-	
-	var number = +prompt("Please enter a number between 1 and 100");	
-
-	fizzBuzz(number);
+	var input;
+	var fizzBuzz = fizzBuzzConstructor(input);
+	fizzBuzz();
 
 	$("#start-over").click(function(){
 		location.reload();
 	});
-
-	});
+});
