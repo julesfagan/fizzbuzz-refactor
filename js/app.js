@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	//Closure function
 	function fizzBuzzConstructor(input) {
-		var numberToCalculate = input;/ //numberToCalculate is now a private variable
+		var numberToCalculate = input; //numberToCalculate is now a private variable
 
 		while ((numberToCalculate == NaN) || (numberToCalculate%1 != 0) || (numberToCalculate < 1) || (numberToCalculate > 100) || !($.isNumeric(numberToCalculate)) )
 		{
